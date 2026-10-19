@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nativa | Minha Loja</title>
+    <link rel="stylesheet" href="main..css">
+</head>
+<body>
+   <header class="cabecalho">
+    <a href="#" class="logo">
+        NATIVA<span>.</span>
+    </a>
+
+    <nav class="menu">
+        <a href="#">Início</a>
+        <a href="#produtos">Fragrâncias</a>
+        <a href="#sobre">Nossa essência</a>
+    </nav>
+
+    <div class="acoes-cabecalho">
+        <a href="#produtos" class="pesquisa" aria-label="Pesquisar">
+            ⌕
+        </a>
+
+       <button class="sacola" id="abrirSacola" type="button">
+    <span class="icone-sacola">
+        <svg viewBox="0 0 48 48" width="30" height="30"
+             aria-hidden="true">
+            <path d="M10 17 H38 L35 41 H13 Z"
+                  fill="#F8F5EF"/>
+            <path d="M18 18 V13 A6 6 0 0 1 30 13 V18"
+                  fill="none" stroke="#AD8541"
+                  stroke-width="3" stroke-linecap="round"/>
+        </svg>
+    </span>
+    <span class="texto-sacola">Sacola</span>
+    <span class="contador-sacola" id="contadorSacola">0</span>
+</button>
+    </svg>
+</span>
+    </div>
+</header>
+
+    <main>
+       <section class="destaque banner-completo">
+    <img
+        src="banner-nativa.png"
+        alt="Nativa, perfumes que marcam"
+    >
+
+    <a href="#produtos" class="botao-banner" aria-label="Explorar coleção">
+    </a>
+</section>
+        <section id="produtos" class="produtos">
+    <p class="etiqueta-produtos">ESCOLHIDOS PARA VOCÊ</p>
+
+    <h2>Nossas Fragrâncias</h2>
+
+    <p class="subtitulo-produtos">
+        Descubra aromas que combinam com a sua essência.
+    </p>
+
+    <div class="grade-produtos">
+
+        <article class="cartao-produto">
+            <div class="imagem-produto imagem-noir">
+                <img
+                    src="noir-intense.png"
+                    alt="Frasco do perfume Noir Intense"
+                >
+                <span class="selo-produto">DESTAQUE</span>
+            </div>
+
+            <div class="info-produto">
+                <p class="categoria-produto">AMadeirado</p>
+                <h3>Noir Intense</h3>
+                <p class="descricao-produto">Marcante e sofisticado.</p>
+                <p class="preco-produto">R$ 189,90</p>
+                <button class="botao-comprar" type="button">
+                    Ver produto
+                </button>
+            </div>
+        </article>
+
+        <article class="cartao-produto">
+            <div class="imagem-produto">
+                <img
+                    src="golden-bloom.png"
+                    alt="Frasco do perfume Golden Bloom"
+                >
+            </div>
+
+            <div class="info-produto">
+                <p class="categoria-produto">FLORAL</p>
+                <h3>Golden Bloom</h3>
+                <p class="descricao-produto">Delicado e luminoso.</p>
+                <p class="preco-produto">R$ 159,90</p>
+                <button class="botao-comprar" type="button">
+                    Ver produto
+                </button>
+            </div>
+        </article>
+
+        <article class="cartao-produto">
+            <div class="imagem-produto">
+                <img
+                    src="blue-elegance.png"
+                    alt="Frasco do perfume Blue Élégance"
+                >
+            </div>
+
+            <div class="info-produto">
+                <p class="categoria-produto">AROMÁTICO</p>
+                <h3>Blue Élégance</h3>
+                <p class="descricao-produto">Fresco e envolvente.</p>
+                <p class="preco-produto">R$ 199,90</p>
+                <button class="botao-comprar" type="button">
+                    Ver produto
+                </button>
+            </div>
+        </article>
+
+        <article class="cartao-produto">
+            <div class="imagem-produto">
+                <img
+                    src="valvet-rose.png"
+                    alt="Frasco do perfume Velvet Rose"
+                >
+            </div>
+
+            <div class="info-produto">
+                <p class="categoria-produto">FLORAL ADOCICADO</p>
+                <h3>Velvet Rose</h3>
+                <p class="descricao-produto">Suave e inesquecível.</p>
+                <p class="preco-produto">R$ 139,90</p>
+                <button class="botao-comprar" type="button">
+                    Ver produto
+                </button>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+        <section id="produtos" class="produtos">
+            <h2>Nossos produtos</h2>
+            <p>Novidades escolhidas para você.</p>
+        </section>
+
+        <footer id="sobre">
+            <p>Nativa. Feita para descobrir.</p>
+        </footer>
+    </main>
+    <div class="fundo-modal" id="modalProduto" aria-hidden="true">
+    <div class="janela-produto" role="dialog" aria-modal="true" aria-labelledby="modalNome">
+        <button class="fechar-modal" id="fecharModal" type="button" aria-label="Fechar">×</button>
+
+        <div class="detalhes-produto">
+            <img id="modalImagem" src="" alt="">
+
+            <div class="texto-detalhes">
+                <p class="categoria-produto" id="modalCategoria"></p>
+                <h2 id="modalNome"></h2>
+                <p id="modalDescricao"></p>
+                <p class="preco-produto" id="modalPreco"></p>
+
+                <button class="botao-comprar" id="adicionarSacola" type="button">
+                    Adicionar à sacola
+                </button>
+
+                <p id="mensagemSacola" aria-live="polite"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"><div class="fundo-modal" id="modalSacola" aria-hidden="true">
+    <div class="janela-produto janela-sacola"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="tituloSacola">
+
+        <button class="fechar-modal" id="fecharSacola"
+                type="button" aria-label="Fechar">×</button>
+
+        <h2 id="tituloSacola">Sua sacola</h2>
+
+        <div id="itensSacola">
+            <p>Sua sacola está vazia.</p>
+        </div>
+
+        <div class="resumo-sacola">
+            <p>Total: <strong id="totalSacola">R$ 0,00</strong></p>
+            <button class="botao-comprar" id="finalizarPedido"
+                    type="button">
+                Finalizar pedido
+            </button>
+        </div>
+    </div>
+</div></script>
+</body>
+</html>

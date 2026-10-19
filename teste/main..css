@@ -1,0 +1,796 @@
+/* =================================
+   NATIVA PERFUMARIA
+   Identidade: Noir Champagne
+   ================================= */
+
+/* 1. Paleta de cores */
+:root {
+    --preto: #171717;
+    --champagne: #C6A66B;
+    --branco: #FAF9F6;
+    --branco-puro: #FFFFFF;
+    --cinza: #77736D;
+    --borda: #E8E4DC;
+}
+
+/* 2. Configurações gerais */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--branco);
+    color: var(--preto);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+}
+
+/* 3. Cabeçalho */
+header {
+    padding: 22px 8%;
+    background-color: var(--branco-puro);
+    border-bottom: 1px solid var(--borda);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--preto);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: var(--champagne);
+}
+
+/* 4. Apresentação principal */
+.destaque {
+    padding: 100px 8%;
+    text-align: center;
+    background-color: var(--preto);
+    color: var(--branco);
+}
+
+.destaque h1 {
+    max-width: 800px;
+    margin: 18px auto;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -1px;
+}
+
+.destaque p {
+    max-width: 560px;
+    margin: 0 auto 28px;
+    color: #D1CEC8;
+    font-size: 16px;
+}
+
+.destaque .etiqueta {
+    color: var(--champagne);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+/* 5. Botão principal */
+.botao {
+    display: inline-block;
+    padding: 14px 30px;
+    background-color: var(--champagne);
+    color: var(--preto);
+    border: 1px solid var(--champagne);
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
+}
+
+.botao:hover {
+    background-color: transparent;
+    color: var(--champagne);
+}
+
+/* 6. Seção de produtos */
+.produtos {
+    padding: 80px 8%;
+    text-align: center;
+    background-color: var(--branco);
+}
+
+.produtos h2 {
+    margin: 0 0 12px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 400;
+}
+
+.produtos p {
+    margin: 0;
+    color: var(--cinza);
+    font-size: 15px;
+}
+
+/* 7. Rodapé */
+footer {
+    padding: 28px 8%;
+    text-align: center;
+    background-color: var(--preto);
+    color: var(--branco);
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* 8. Adaptação para celulares */
+@media (max-width: 600px) {
+    header {
+        padding: 18px 6%;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 16px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .destaque {
+        padding: 75px 6%;
+    }
+
+    .destaque h1 {
+        font-size: 40px;
+    }
+
+    .destaque p {
+        font-size: 15px;
+    }
+
+    .produtos {
+        padding: 60px 6%;
+    }
+}
+
+/* =================================
+   VITRINE DE PRODUTOS
+   ================================= */
+
+.etiqueta-produtos {
+    color: var(--champagne) !important;
+    font-size: 11px !important;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.subtitulo-produtos {
+    margin-bottom: 38px !important;
+}
+
+.grade-produtos {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 42px;
+    text-align: left;
+}
+
+.cartao-produto {
+    min-width: 0;
+    background-color: var(--branco-puro);
+    border: 1px solid var(--borda);
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.cartao-produto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.imagem-produto {
+    position: relative;
+    overflow: hidden;
+    background-color: #F1EDE5;
+    aspect-ratio: 4 / 5;
+}
+
+.imagem-produto img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.selo-produto {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 6px 9px;
+    background-color: var(--champagne);
+    color: var(--preto);
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.info-produto {
+    padding: 20px 16px;
+}
+
+.categoria-produto {
+    margin: 0 0 8px !important;
+    color: var(--cinza) !important;
+    font-size: 10px !important;
+    letter-spacing: 1.5px;
+}
+
+.info-produto h3 {
+    margin: 0 0 6px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 21px;
+    font-weight: normal;
+}
+
+.descricao-produto {
+    margin: 0 0 16px !important;
+    color: var(--cinza) !important;
+    font-size: 13px !important;
+}
+
+.preco-produto {
+    margin: 0 0 16px !important;
+    color: var(--preto) !important;
+    font-size: 17px !important;
+    font-weight: bold;
+}
+
+.botao-comprar {
+    width: 100%;
+    padding: 12px 8px;
+    background-color: var(--preto);
+    color: var(--branco);
+    border: 1px solid var(--preto);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease,
+                color 0.2s ease;
+}
+
+.botao-comprar:hover {
+    background-color: var(--champagne);
+    color: var(--preto);
+    border-color: var(--champagne);
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+    .grade-produtos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+    .grade-produtos {
+        gap: 12px;
+    }
+
+    .info-produto {
+        padding: 14px 10px;
+    }
+
+    .info-produto h3 {
+        font-size: 18px;
+    }
+
+    .preco-produto {
+        font-size: 15px !important;
+    }
+
+    .botao-comprar {
+        font-size: 10px;
+        padding: 11px 4px;
+    }
+}
+
+/* CABEÇALHO SOFISTICADO NATIVA */
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 25px 7%;
+    background: #FAF9F6;
+    border-bottom: 1px solid #E8E4DC;
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    color: #171717;
+    text-decoration: none;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 27px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: #C6A66B;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+}
+
+.menu a {
+    color: #34332F;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+}
+
+.menu a:hover {
+    color: #B08D50;
+}
+
+.acoes-cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.pesquisa {
+    color: #171717;
+    text-decoration: none;
+    font-size: 28px;
+    line-height: 1;
+}
+
+.sacola {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #171717;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.icone-sacola {
+    color: #C6A66B;
+    font-size: 22px;
+}
+
+@media (max-width: 700px) {
+    .cabecalho {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 22px 12px;
+        padding: 20px 5%;
+    }
+
+    .logo {
+        font-size: 23px;
+        letter-spacing: 3px;
+    }
+
+    .menu {
+        order: 3;
+        width: 100%;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .menu a {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .acoes-cabecalho {
+        gap: 14px;
+    }
+
+    .texto-sacola {
+        display: none;
+    }
+}
+
+@media (max-width: 360px) {
+    .menu {
+        gap: 12px;
+    }
+
+    .menu a {
+        font-size: 8px;
+    }
+}
+
+/* BANNER PRINCIPAL NATIVA */
+
+.destaque {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    padding: 80px 8%;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(15, 13, 10, 0.96) 0%,
+            rgba(15, 13, 10, 0.82) 42%,
+            rgba(15, 13, 10, 0.08) 100%
+        ),
+        url("banner-nativa.png") center 55% / cover no-repeat;
+    color: #FAF9F6;
+}
+
+.conteudo-destaque {
+    max-width: 650px;
+}
+
+.etiqueta-destaque {
+    display: block;
+    margin-bottom: 24px;
+    color: #C6A66B;
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+.destaque h1 {
+    margin: 0 0 24px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(38px, 5vw, 64px);
+    font-weight: normal;
+    line-height: 1.12;
+}
+
+.destaque h1 em {
+    font-weight: normal;
+}
+
+.destaque p {
+    max-width: 390px;
+    margin-bottom: 32px;
+    color: #E2DED5;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.destaque .botao {
+    display: inline-block;
+    padding: 16px 26px;
+    background: #C6A66B;
+    color: #171717;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.2s ease;
+}
+
+.destaque .botao:hover {
+    background: #D8BB86;
+}
+
+@media (max-width: 600px) {
+    .destaque {
+        min-height: 560px;
+        padding: 60px 6%;
+        background-position: 60% center;
+    }
+
+    .conteudo-destaque {
+        max-width: 100%;
+    }
+
+    .destaque h1 {
+        font-size: 38px;
+    }
+
+    .destaque p {
+        font-size: 15px;
+    }
+}
+
+.banner-completo {
+    padding: 0;
+    min-height: auto;
+    background: none;
+}
+
+.banner-completo img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+/* BOTÃO CLICÁVEL SOBRE O BANNER */
+
+.banner-completo {
+    position: relative;
+    padding: 0;
+    min-height: auto;
+    background: none;
+    line-height: 0;
+}
+
+.banner-completo img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.botao-banner {
+    position: absolute;
+
+    /* Ajustaremos a posição conforme a imagem */
+    left: 8%;
+    top: 58%;
+    width: 210px;
+    height: 55px;
+
+    display: block;
+    cursor: pointer;
+    background: transparent;
+    z-index: 2;
+}
+
+/* JANELA DE DETALHES DO PRODUTO */
+
+.fundo-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    padding: 20px;
+    background: rgba(15, 13, 10, 0.75);
+    align-items: center;
+    justify-content: center;
+}
+
+.fundo-modal.ativo {
+    display: flex;
+}
+
+.janela-produto {
+    position: relative;
+    width: 100%;
+    max-width: 760px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 35px;
+    background: #FAF9F6;
+    border: 1px solid #C6A66B;
+}
+
+.fechar-modal {
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    border: none;
+    background: transparent;
+    color: #171717;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.detalhes-produto {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 30px;
+}
+
+.detalhes-produto img {
+    width: 100%;
+    max-height: 430px;
+    object-fit: contain;
+}
+
+.texto-detalhes h2 {
+    margin: 12px 0;
+    color: #171717;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 32px;
+    font-weight: normal;
+}
+
+.texto-detalhes > p:not(.categoria-produto):not(.preco-produto) {
+    color: #77736D;
+    line-height: 1.7;
+}
+
+#mensagemSacola {
+    color: #65502C;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    .janela-produto {
+        padding: 45px 22px 25px;
+    }
+
+    .detalhes-produto {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .detalhes-produto img {
+        max-height: 250px;
+    }
+
+    .texto-detalhes h2 {
+        font-size: 26px;
+    }
+}
+
+/* =====================================
+   BOTÃO DA SACOLA NO CABEÇALHO
+===================================== */
+.sacola {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border: 1px solid #C6A66B;
+    background: transparent;
+    color: #171717;
+    font: inherit;
+    cursor: pointer;
+}
+
+/* CONTADOR DE PRODUTOS NA SACOLA */
+.contador-sacola {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 22px;
+    height: 22px;
+    padding: 0 5px;
+    border-radius: 50%;
+    background: #C6A66B;
+    color: #171717;
+    font-size: 12px;
+}
+
+/* TÍTULO DA JANELA DA SACOLA */
+.janela-sacola h2 {
+    margin: 0 0 25px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: normal;
+}
+
+/* ORGANIZAÇÃO DE CADA PRODUTO NA SACOLA */
+.item-sacola {
+    display: grid;
+    grid-template-columns: 75px 1fr auto;
+    gap: 15px;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #DED8CE;
+}
+
+/* IMAGEM DO PRODUTO NA SACOLA */
+.item-sacola img {
+    width: 75px;
+    height: 85px;
+    object-fit: contain;
+}
+
+/* NOME DO PRODUTO NA SACOLA */
+.item-sacola h3 {
+    margin: 0 0 6px;
+    font-size: 15px;
+}
+
+/* DESCRIÇÕES E PREÇOS DOS PRODUTOS */
+.item-sacola p {
+    margin: 4px 0;
+    color: #77736D;
+    font-size: 13px;
+}
+
+/* CONTROLES PARA AUMENTAR OU DIMINUIR A QUANTIDADE */
+.controles-quantidade {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+/* BOTÕES DE QUANTIDADE E REMOÇÃO */
+.controles-quantidade button,
+.remover-item {
+    border: 1px solid #C6A66B;
+    background: transparent;
+    padding: 5px 9px;
+    cursor: pointer;
+}
+
+/* BOTÃO PARA REMOVER UM PRODUTO */
+.remover-item {
+    color: #8B3535;
+    font-size: 12px;
+}
+
+/* RESUMO E TOTAL DA COMPRA */
+.resumo-sacola {
+    margin-top: 25px;
+}
+
+/* LINHA DO VALOR TOTAL */
+.resumo-sacola > p {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+}
+
+/* BOTÃO PARA FINALIZAR O PEDIDO */
+.resumo-sacola .botao-comprar {
+    width: 100%;
+    margin-top: 12px;
+}
+
+/* =====================================
+   AJUSTES PARA CELULARES
+===================================== */
+@media (max-width: 450px) {
+
+    /* ORGANIZAÇÃO DOS PRODUTOS EM TELAS PEQUENAS */
+    .item-sacola {
+        grid-template-columns: 55px 1fr;
+        gap: 10px;
+    }
+
+    /* TAMANHO DAS IMAGENS NO CELULAR */
+    .item-sacola img {
+        width: 55px;
+        height: 70px;
+    }
+
+    /* POSIÇÃO DO BOTÃO DE REMOVER NO CELULAR */
+    .remover-item {
+        grid-column: 2;
+        justify-self: start;
+    }
+}
